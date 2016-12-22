@@ -8,8 +8,9 @@
 **大家可以直接看原项目，这个项目只用于作者本人的学习使用。**
 http://blog.csdn.net/bboyfeiyu/article/details/44309093
 
+---
 
-项目涉及到的技术点：
+**项目涉及到的技术点**：
 1.java 注解
 2.java反射
 3.java ThreadLocal
@@ -18,10 +19,10 @@ http://blog.csdn.net/bboyfeiyu/article/details/44309093
 6.java 对象比较
 7.android handlerThread
 
+---
 
-
-项目的总体设计：
-![Alt text](./QQ截图20161222143439.png)
+**项目的总体设计：**
+![enter image description here](http://cfbst.img48.wal8.com/img48/546019_20160518114414/148238963491.png)
 
 AndroidEventBus简约整体设计大致如上图所示，主要分为三个部分，即EventBus、SubscriberMethodHunter、EventHandler。
 
@@ -30,12 +31,11 @@ EventBus负责订阅对象与事件的管理，比如注册、注销以及发布
 
 **事件注册流程图**
 
-![Alt text](./QQ截图20161222143450.png)
-
+![enter image description here](http://cfbst.img48.wal8.com/img48/546019_20160518114414/148238963553.png)
 
 **事件发布流程图**
 
-![Alt text](./QQ截图20161222143500.png)
+![enter image description here](http://cfbst.img48.wal8.com/img48/546019_20160518114414/148238963601.png)
 
 
  **核心类详细介绍**
