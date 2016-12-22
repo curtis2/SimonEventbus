@@ -1,7 +1,7 @@
 @(架构模式)
 #SimonEventBus
 
-   SimonEventBus类似于Eventbus, 它简化了Activity、Fragment、Service等组件或者对象之间的交互，很大程度上降低了它们之间的耦合，使得我们的代码更加简洁，耦合性更低，提升我们的代码质量。
+  &ensp;&ensp; SimonEventBus类似于Eventbus, 它简化了Activity、Fragment、Service等组件或者对象之间的交互，很大程度上降低了它们之间的耦合，使得我们的代码更加简洁，耦合性更低，提升我们的代码质量。
 
 > 申明：本项目是学习自@MrSimp1e Android事件开发总线，所以基本上所有的技术点都是从该开源项目中学习来的，主要是用于作者本人的学习和工作使用。 
 
@@ -24,19 +24,15 @@ http://blog.csdn.net/bboyfeiyu/article/details/44309093
 **项目的总体设计：**
 ![enter image description here](http://cfbst.img48.wal8.com/img48/546019_20160518114414/148238963491.png)
 
-AndroidEventBus简约整体设计大致如上图所示，主要分为三个部分，即EventBus、SubscriberMethodHunter、EventHandler。
+&ensp;&ensp;&ensp;AndroidEventBus简约整体设计大致如上图所示，主要分为三个部分，即EventBus、SubscriberMethodHunter、EventHandler。
 
-EventBus负责订阅对象与事件的管理，比如注册、注销以及发布事件等。在初始时将某个对象注册到EventBus中，EventBus会遍历该对象class中的所有方法，把参数数量为1且用了Subscriber注解标识的函数管理起来，以事件类型和订阅函数Subscriber的tag构建一个EventType作为一种事件类型，某个事件类型对应有一个接收者列表。当有事件发布时，EventBus会根据发布的事件类型与tag构建EventType，然后找到对应的订阅者列表，并且将这些事件投递给所有订阅者。SubscriberMethodHunter负责查找合适的EventType，而EventHandler则负责将这些订阅函数执行到相应的线程中。至此，整个事件总线的操作流程就完成了，当然在将Activity、Fragment等组件注册到EventBus时，不要忘了在这些对象销毁时将它们从EventBus中移除，即调用unregister方法。
+&ensp;&ensp;&ensp;EventBus负责订阅对象与事件的管理，比如注册、注销以及发布事件等。在初始时将某个对象注册到EventBus中，EventBus会遍历该对象class中的所有方法，把参数数量为1且用了Subscriber注解标识的函数管理起来，以事件类型和订阅函数Subscriber的tag构建一个EventType作为一种事件类型，某个事件类型对应有一个接收者列表。当有事件发布时，EventBus会根据发布的事件类型与tag构建EventType，然后找到对应的订阅者列表，并且将这些事件投递给所有订阅者。SubscriberMethodHunter负责查找合适的EventType，而EventHandler则负责将这些订阅函数执行到相应的线程中。至此，整个事件总线的操作流程就完成了，当然在将Activity、Fragment等组件注册到EventBus时，不要忘了在这些对象销毁时将它们从EventBus中移除，即调用unregister方法。
 
 
 **事件注册流程图**
-
 ![enter image description here](http://cfbst.img48.wal8.com/img48/546019_20160518114414/148238963553.png)
-
 **事件发布流程图**
-
 ![enter image description here](http://cfbst.img48.wal8.com/img48/546019_20160518114414/148238963601.png)
-
 
  **核心类详细介绍**
 
