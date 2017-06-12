@@ -1,7 +1,4 @@
-@(架构模式)
-#SimonEventBus
-
-  &ensp;&ensp; SimonEventBus类似于Eventbus, 它简化了Activity、Fragment、Service等组件或者对象之间的交互，很大程度上降低了它们之间的耦合，使得我们的代码更加简洁，耦合性更低，提升我们的代码质量。
+&ensp;&ensp; SimonEventBus类似于Eventbus, 它简化了Activity、Fragment、Service等组件或者对象之间的交互，很大程度上降低了它们之间的耦合，使得我们的代码更加简洁，耦合性更低，提升我们的代码质量。
 
 > 申明：本项目是学习自@MrSimp1e Android事件开发总线，所以基本上所有的技术点都是从该开源项目中学习来的，主要是用于作者本人的学习和工作使用。 
 
