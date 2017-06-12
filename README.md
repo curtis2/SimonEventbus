@@ -11,18 +11,17 @@ http://blog.csdn.net/bboyfeiyu/article/details/44309093
 ---
 
 **项目涉及到的技术点**：
-1.java 注解
-2.java反射
-3.java ThreadLocal
-4.java 并发类CopyOnWriteArrayList,ConcurrentHashMap
-5.java集合的特性Arraylist，LinkedList等
-6.java 对象比较
-7.android handlerThread
+- 1.java 注解
+- 2.java反射
+- 3.java 并发类CopyOnWriteArrayList,ConcurrentHashMap
+- 4.java集合的特性Arraylist，LinkedList等
+- 5.java 对象比较
+- 6.android handlerThread
 
 ---
 
 **项目的总体设计：**
-![enter image description here](http://cfbst.img48.wal8.com/img48/546019_20160518114414/148238963491.png)
+![](https://github.com/curtis2/SimonEventbus/blob/master/images/QQ%E6%88%AA%E5%9B%BE20161222143439.png)
 
 &ensp;&ensp;&ensp;AndroidEventBus简约整体设计大致如上图所示，主要分为三个部分，即EventBus、SubscriberMethodHunter、EventHandler。
 
@@ -30,12 +29,11 @@ http://blog.csdn.net/bboyfeiyu/article/details/44309093
 
 
 **事件注册流程图**
-![enter image description here](http://cfbst.img48.wal8.com/img48/546019_20160518114414/148238963553.png)
+![](https://github.com/curtis2/SimonEventbus/blob/master/images/QQ%E6%88%AA%E5%9B%BE20161222143450.png)
 **事件发布流程图**
-![enter image description here](http://cfbst.img48.wal8.com/img48/546019_20160518114414/148238963601.png)
+![](https://github.com/curtis2/SimonEventbus/blob/master/images/QQ%E6%88%AA%E5%9B%BE20161222143500.png)
 
  **核心类详细介绍**
-
 - EventBus : 事件总线核心类，封装了订阅对象的注册、注销以及事件的发布、投递等，是事件总线最核心的类;
 - EventType : 事件类型对象，由事件Class类型与接收函数tag组成，用于标识一个事件类型;
 - Subscriber : Subscriber注解，作用于函数上，用于标识这个函数是一个事件订阅函数;
